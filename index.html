@@ -8,7 +8,48 @@
     <title>Proyecto final</title>
 </head>
 <body>
-    <H1>CALCULE EL PRECIO TOTAL DE SU COMPRA</H1>
+    <H1>Agregar producto</H1>
+    <main>
+    <form id="formulario">
+      <label for="campo-tipo">Tipo</label>
+      <select id="campo-tipo" name="tipo">
+        <option value="buzo">Buzo</option>
+        <option value="remera">Remera</option>
+        <option value="pantalon">Pantalon</option>
+      </select>
+
+      <label for="campo-color">
+          Color
+      </label>
+      <select id="campo-color" name="color">
+        <option value="rojo">Rojo</option>
+        <option value="verde">Verde</option>
+        <option value="rosa">Rosa</option>
+        <option value="negro">Negro</option>
+        <option value="blanco">Blanco</option>
+      </select>
+
+      <label for="campo-talle">
+          Talle
+      </label>
+      <select id="campo-talle" name="talle">
+        <option value="s">S</option>
+        <option value="m">M</option>
+        <option value="l">L</option>
+        <option value="xl">XL</option>
+      </select>
+
+      <label for="campo-precio">
+          Precio
+      </label>
+      <input type="number" id="campo-precio">
+      
+      <label>
+          <input type="submit" value="Enviar" id="submit">
+      </label>            
+  </form>
+</main> 
+ 
     
     <script src="index.js"></script>
 </body>

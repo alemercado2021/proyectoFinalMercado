@@ -5,7 +5,18 @@ h1 {
     color: aliceblue;
     text-align: center;
 }
-h2{
-    color: aliceblue;
-    text-align: center;
+
+#formulario{
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    height: 400px;
+    background-color: white;
+    color: black;
+    border: 5px solid blue;
+    border-radius: 5px;
+    justify-content: space-between;
+    margin: 5px;
+    padding: 10px;
+    align-items: center;
 }

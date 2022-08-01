@@ -1,33 +1,78 @@
-let stockRemeras = [
-    {talla: "xs",color: "negro"},{talla: "xs",color: "rosa"},{talla: "xs",color: "rojo"},{talla: "xs",color: "blanco"},{talla: "xs",color: "azul"},
-    {talla: "s",color: "negro"},{talla: "s",color: "verde"},{talla: "s",color: "rosa"},{talla: "s",color: "blanco"},{talla: "s",color: "azul"},
-    {talla: "m",color: "negro"},{talla: "m",color: "verde"},{talla: "m",color: "rojo"},{talla: "m",color: "rosa"},{talla: "m",color: "azul"},
-    {talla: "l",color: "negro"},{talla: "l",color: "verde"},{talla: "l",color: "rojo"},{talla: "l",color: "blanco"},{talla: "l",color: "rojo"},
-    {talla: "xl",color: "rosa"},{talla: "xl",color: "verde"},{talla: "xl",color: "rojo"},{talla: "xl",color: "blanco"},{talla: "xl",color: "azul"},
-]
-
-let stockPantalones = [
-    {talla: "xs",color: "negro"},{talla: "xs",color: "rosa"},{talla: "xs",color: "rojo"},{talla: "xs",color: "blanco"},{talla: "xs",color: "azul"},
-    {talla: "s",color: "negro"},{talla: "s",color: "verde"},{talla: "s",color: "rosa"},{talla: "s",color: "blanco"},{talla: "s",color: "azul"},
-    {talla: "m",color: "negro"},{talla: "m",color: "verde"},{talla: "m",color: "rojo"},{talla: "m",color: "rosa"},{talla: "m",color: "azul"},
-    {talla: "l",color: "negro"},{talla: "l",color: "verde"},{talla: "l",color: "rojo"},{talla: "l",color: "blanco"},{talla: "l",color: "rojo"},
-    {talla: "xl",color: "rosa"},{talla: "xl",color: "verde"},{talla: "xl",color: "rojo"},{talla: "xl",color: "blanco"},{talla: "xl",color: "azul"},
-]
-
-let stockBuzos = [
-    {talla: "xs",color: "negro"},{talla: "xs",color: "rosa"},{talla: "xs",color: "rojo"},{talla: "xs",color: "blanco"},{talla: "xs",color: "azul"},
-    {talla: "s",color: "negro"},{talla: "s",color: "verde"},{talla: "s",color: "rosa"},{talla: "s",color: "blanco"},{talla: "s",color: "azul"},
-    {talla: "m",color: "negro"},{talla: "m",color: "verde"},{talla: "m",color: "rojo"},{talla: "m",color: "rosa"},{talla: "m",color: "azul"},
-    {talla: "l",color: "negro"},{talla: "l",color: "verde"},{talla: "l",color: "rojo"},{talla: "l",color: "blanco"},{talla: "l",color: "rojo"},
-    {talla: "xl",color: "rosa"},{talla: "xl",color: "verde"},{talla: "xl",color: "rojo"},{talla: "xl",color: "blanco"},{talla: "xl",color: "azul"},
-]
 
 
 const carroDeCompras = [
 
 ]
+
+const formulario = document.querySelector("#formulario")
+const inputTipo = document.querySelector("#campo-tipo")
+const inputColor = document.querySelector("#campo-color")
+const inputTalle = document.querySelector("#campo-talle")
+const inputPrecio = document.querySelector("#campo-precio")
+const submit = document.querySelector("#submit")
+/*const compra = document.querySelector("#compra")*/
+
+
+class buzo {
+    constructor(color,talle,precio){
+        this.color = color;
+        this.talle = talle;
+        this.precio = precio;
+    }
+}
+
+class pantalon {
+    constructor(color,talle,precio){
+        this.color = color;
+        this.talle = talle;
+        this.precio = precio;
+    }
+}
+
+class remera {
+    constructor(color,talle,precio){
+        this.color = color;
+        this.talle = talle;
+        this.precio = precio;
+    }
+}
+const stockBuzos = []
+const stockPantalones = []
+const stockRemeras = []
+
+
+formulario.onsubmit = (event) => {
+    event.preventDefault()
+    if (inputTipo.value === "buzo"){
+        stockBuzos.push(new buzo(inputColor.value, inputTalle.value,inputPrecio.value,))
+    }
+    else if (inputTipo.value === "remera"){
+        stockRemeras.push(new remera(inputColor.value, inputTalle.value,inputPrecio.value,))
+    }
+    else if(inputTipo.value === "pantalon") {stockPantalones.push(new pantalon(inputColor.value, inputTalle.value,inputPrecio.value,))}
+
+    console.log(stockBuzos)
+    console.log(stockPantalones)
+    console.log(stockRemeras)
+}
+
+
+
+
+
+
+
+
+
+
+/*console.log(inputColor.value)
+
 let precioBruto = 0
 let pregunta
+
+compra.addEventListener("click",()=>{
+
+
 do {
     const productos = prompt("Que tipo de indumentaria quiere comprar? Tenemos: Remeras, pantalones y buzos")
     if (productos.toLowerCase() === 'remeras' || productos.toLowerCase() === 'remera'){
@@ -1637,7 +1682,7 @@ function compraPantalones (array){
 console.log("El precio bruto es de:"+precioBruto)
 document.write("<h2>El precio bruto de los productos es de:"+precioBruto+"</h2>");
 
-/*Calcular el iva*/
+Calcular el iva
 function calcularIva (precioBruto){
     return (precioBruto * 0.21)
 }
@@ -1646,14 +1691,14 @@ iva = iva.toFixed(2)
 console.log("El iva que se le sumara a su compra es de:"+iva)
 document.write("<h2>El iva que se le sumara a su compra es de:"+iva+"</h2>");
 
-/*Sumarle el iva al precio total*/
+/*Sumarle el iva al precio total
 iva = parseInt(iva)
 precioBruto = parseInt(precioBruto)
 var precioTotal = precioBruto + iva
 console.log(precioTotal)
 document.write("<h2>El precio final de su compra es de:"+precioTotal+"</h2>");
 
-/*Forma de pago*/
+/*Forma de pago
 const pago = prompt("Quiere hacer el pago en cuotas?Ingrese si o no")
 if (pago.toLowerCase() === 'si'){
     var cuotas = prompt("Ingrese la cantidad la cantidad de cuotas")
@@ -1671,3 +1716,4 @@ else if (pago === 'no'){
 else{
     alert("usted no ingreso una respuesta correcta, es Si o No")
 }
+})*/
