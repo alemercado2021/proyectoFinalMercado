@@ -5,6 +5,8 @@ const carroDeCompras = [
 ]
 
 const formulario = document.querySelector("#formulario")
+const inputId = document.querySelector("#campo-id")
+const inputNombre = document.querySelector("#campo-nombre")
 const inputTipo = document.querySelector("#campo-tipo")
 const inputColor = document.querySelector("#campo-color")
 const inputTalle = document.querySelector("#campo-talle")
@@ -12,48 +14,28 @@ const inputPrecio = document.querySelector("#campo-precio")
 const submit = document.querySelector("#submit")
 /*const compra = document.querySelector("#compra")*/
 
-
-class buzo {
-    constructor(color,talle,precio){
+const productos = [
+]
+class producto {
+    constructor(id, categoria, nombre, precio, color, talle){
+        this.id = id;
+        this.categoria = categoria;
+        this.nombre = nombre;
+        this.precio = precio;
         this.color = color;
         this.talle = talle;
-        this.precio = precio;
     }
 }
 
-class pantalon {
-    constructor(color,talle,precio){
-        this.color = color;
-        this.talle = talle;
-        this.precio = precio;
-    }
-}
-
-class remera {
-    constructor(color,talle,precio){
-        this.color = color;
-        this.talle = talle;
-        this.precio = precio;
-    }
-}
-const stockBuzos = []
-const stockPantalones = []
-const stockRemeras = []
 
 
 formulario.onsubmit = (event) => {
     event.preventDefault()
-    if (inputTipo.value === "buzo"){
-        stockBuzos.push(new buzo(inputColor.value, inputTalle.value,inputPrecio.value,))
-    }
-    else if (inputTipo.value === "remera"){
-        stockRemeras.push(new remera(inputColor.value, inputTalle.value,inputPrecio.value,))
-    }
-    else if(inputTipo.value === "pantalon") {stockPantalones.push(new pantalon(inputColor.value, inputTalle.value,inputPrecio.value,))}
-
-    console.log(stockBuzos)
-    console.log(stockPantalones)
-    console.log(stockRemeras)
+    productos.push(new producto(inputId.value, inputTipo.value, inputNombre.value, inputPrecio.value, inputColor.value, inputTalle.value,))
+    const nuevoProductoJSON = JSON.stringify(productos);
+    localStorage.setItem("productos", nuevoProductoJSON);
+    console.log(productos)
+    formulario.reset()
 }
 
 
