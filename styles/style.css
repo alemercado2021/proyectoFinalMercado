@@ -1,0 +1,95 @@
+body {
+    background-color: rgb(237, 241, 241);
+    color: white;
+}
+.row{
+    flex-wrap: nowrap;
+}
+.navbar{
+    background-color: rgb(87, 111, 114);
+    color: white;
+}
+
+h1{
+    color: rgb(87, 111, 114)
+}
+
+.mainRegistro{
+    background-color: rgb(87, 111, 114);
+}
+
+.formBeneficios{
+    color: rgb(87, 111, 114);
+}
+
+.filtrosCatalogo{
+    background-color: rgb(87, 111, 114);
+    display: flex;
+    flex-direction: column;
+    margin: 15px;
+    border: 2px solid rgb(87, 111, 114);
+    border-radius: 10px;
+}
+
+.botonesCss{
+    margin: 5px;
+}
+
+#catalogoProductos {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 15px;
+    justify-content: space-between;
+}
+.producto{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(87, 111, 114);
+    margin: 10px;
+
+    border-radius: 10px;
+}
+.producto img {
+    width: 300px;
+    height: auto;
+}
+
+.agregar {
+    margin-bottom: 5px;
+}
+
+.listadoProductos img {
+    width: 100px;
+    height: auto;
+}
+
+.listadoProductos{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: rgb(87, 111, 114);
+    margin: 10px;
+    border: 3px solid rgb(87, 111, 114);
+    align-items: center;
+}
+
+.hunoPagar{
+    text-align: center;
+}
+
+.opcionesPago{
+    background-color: rgb(87, 111, 114);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.opcionesPago li {
+    list-style: none;
+}
+
+.htresPagar{
+    color: rgb(87, 111, 114);
+    text-align: center;
+}
