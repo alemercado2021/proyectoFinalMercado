@@ -55,7 +55,7 @@ function calcularTotal (e){
     if (radioSino.checked === true){
         if (beneficiosCheck === true){
             precioTotal = precioTotal - (precioTotal*0.10)
-            alert("Recibio un descuento del 10%")
+            swal("Recibio un descuento del 10%")
         }
         console.log(precioTotal)
         console.log(calcularIva(precioTotal))
@@ -86,11 +86,12 @@ function calcularTotal (e){
 function confirmarCompra (){
 
     if (beneficiosCheck === true){
-        alert(("El paquete se enviara en los proximos dias hacia esta direccion:") )
+        swal("Felicidades", "...Se enviara el paquete a esta direccion!");
+
     }
     else {
         const direccionComprador = prompt("Ingrese la direccion de envio")
-        alert("El paquete se enviara en los proximos dias hacia esta direccion:"+direccionComprador )
+        swal("Felicidades", "...Se enviara el paquete a esta direccion!"+direccionComprador);
     }
 }
 for (boton2 of botonConfirmar){

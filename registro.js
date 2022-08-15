@@ -20,7 +20,8 @@ formularioReg.onsubmit = (e) =>{
     usuarios.push(new nuevoUsuario(inputUsuario.value, inputEmail.value, inputDireccion.value, inputTelefono.value,))
     const nuevoUsuarioJSON =JSON.stringify(usuarios);
     localStorage.setItem("usuarios", nuevoUsuarioJSON);
-    alert("Ahora es un nuevo subscriptor de nuestra tienda, por ello obtendra increibles beneficios")
+    
+    swal("Ahora es un nuevo subscriptor de nuestra tienda, por ello obtendra increibles beneficios")
     localStorage.setItem("beneficios", true)
     formularioReg.reset()
 }

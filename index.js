@@ -42,7 +42,7 @@ function agregarCompra(e){
     let productoSeleccionado = productosStock.find(producto => producto.id === idBoton)
     carroDeCompras.push(productoSeleccionado)
     localStorage.setItem("carroDeCompras", JSON.stringify(carroDeCompras))
-    alert("Se añadio un nuevo producto al carro de tus compras")
+    swal("Se agrego el producto correctamente!", "", "success");
 }
 
 for (boton of btnAgregar){
