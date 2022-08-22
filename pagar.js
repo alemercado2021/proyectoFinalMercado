@@ -12,7 +12,7 @@ function cargarProductosCarro() {
         <img src="${producto.img}"/>
         <p>${producto.name}</p>
         <p>$${producto.price}</p>
-        <button class="botonBorrar">X</button>
+        <button class="botonBorrar" onclick="eliminarProducto(event)">X</button>
         </li>
         `
 
@@ -90,8 +90,12 @@ function confirmarCompra (){
 
     }
     else {
-        const direccionComprador = prompt("Ingrese la direccion de envio")
-        swal("Felicidades", "...Se enviara el paquete a esta direccion!"+direccionComprador);
+        swal("Ingrese su direccion:", {
+            content: "input",
+          })
+          .then((value) => {
+            swal(`Se enviara a: ${value}`);
+          });
     }
 }
 for (boton2 of botonConfirmar){
@@ -106,10 +110,6 @@ function calcularIva (precioTotal){
     return (iva)
 }
 
-let btnBorrar = document.getElementsByClassName("botonBorrar")
-for (btnSacar of btnBorrar){
-    btnSacar.addEventListener("click", eliminarProducto)
-}
 
 function eliminarProducto(e) {
     listaProductos.innerHTML = ""
