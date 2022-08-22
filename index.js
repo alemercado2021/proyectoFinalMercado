@@ -1,5 +1,6 @@
 let catalogoDiv = document.getElementById("catalogoProductos")
 let carroDeCompras = JSON.parse(localStorage.getItem("carroDeCompras")) || []
+let btnAgregar = document.getElementsByClassName("agregar")
 function cargarCatalogo(array){
     array.forEach(producto => {
         catalogoDiv.innerHTML += `
@@ -11,6 +12,7 @@ function cargarCatalogo(array){
         </div>
         `
     });
+    
 }
 
 cargarCatalogo(productosStock)
@@ -34,7 +36,7 @@ mostrarTodo.addEventListener("click", () => {
     cargarCatalogo(productosStock)
 })
 
-let btnAgregar = document.getElementsByClassName("agregar")
+
 
 function agregarCompra(e){
     const boton = e.target;
@@ -48,3 +50,4 @@ function agregarCompra(e){
 for (boton of btnAgregar){
     boton.addEventListener("click",agregarCompra)
 }
+

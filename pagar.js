@@ -121,4 +121,3 @@ function eliminarProducto(e) {
     localStorage.setItem("carroDeCompras", JSON.stringify(carro))
     cargarProductosCarro(carro)
 }
-
